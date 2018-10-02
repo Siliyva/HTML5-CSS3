@@ -9,13 +9,20 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     margin: 0 auto;
     width: 1280px;
     box-shadow: 2px 2px 2px 2px #e6d8d8;
 }
 
+.content {
+    flex: 1;
+}
 
-/*start header*/
+
+/*-------start header-------*/
 .padding-site {
     padding-left: 50px;
     padding-right: 50px;
@@ -63,10 +70,10 @@ header {
     height: 214px;
 }
 
-/*stop header*/
 
 
-/*start block1 */
+
+/*-------start block1-------*/
 .block1 {
     display: flex;
     justify-content: space-between;
@@ -98,15 +105,18 @@ header {
     margin-bottom: 50px;
 }
 
-/*stop block1*/
 
-
-/*start block2*/
-.block2 {
+/*-------start block2-------*/
+.dignity {
     background-color: #f5f5f5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 30px;
 }
 
-.block2 h3 {
+.dignity-title {
+    width: 100%;
     font-family: Arial;
     font-size: 30px;
     color: #445161;
@@ -116,28 +126,68 @@ header {
     padding-top: 50px;
 }
 
-.block2 .dettext {
-    display: flex;
-    justify-content: space-between;
+.dignity-column {
+    width: 49%;
 }
 
-.block2 p {
+details {
+    height: 80px;
+    position: relative;
+    margin-bottom: 32px;
+    text-align: justify;
+}
+
+summary {
+    cursor: pointer;
+    outline: none;
+    padding-left: 40px;
+    text-transform: uppercase;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none
+}
+
+summary:after {
+    content: "-";
+    display: block;
+    background: #445161;
+    color: #fff;
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 26px;
+    position: absolute;
+    top: 2px;
+    left: -38px;
+    margin-left: 40px;
+    text-align: center;
+    height: 32px;
+    width: 32px;
+
+}
+
+details[open] summary:after {
+    content: "+";
+    line-height: 34px;
+    margin-left: 40px;
+}
+
+.dignity-column p {
     font-family: Arial;
     color: #333333;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    width: 526px;
-    margin-bottom: 50px;
-
+    padding-left: 40px;
 }
 
-/*stop block2*/
 
 
-/*start block3*/
-
-
+/*-------start block3-------*/
 .block3 h3 {
     font-family: Arial;
     font-weight: 400;
@@ -146,15 +196,12 @@ header {
     line-height: 26px;
     text-align: center;
     padding-top: 50px;
-
-
 }
 
 .scrinshots {
     display: flex;
     justify-content: space-between;
     margin-top: 34px;
-
 }
 
 .block3 h4 {
@@ -180,16 +227,17 @@ p {
     overflow: hidden;
 }
 
-.block3 a img {
+.block3 img {
+    display: block;
     float: left;
     clear: both;
     padding: 0 13px 30px;
 }
 
-/*stop block3*/
 
 
-/*start block4*/
+
+/*-------start block4-------*/
 .block4 {
     background: #f5f5f5;
     margin-top: 20px;
@@ -211,19 +259,42 @@ p {
     justify-content: space-between;
 }
 
+.review .bottom-1 {
+    margin-bottom: 30px;
+}
+
+.review .bottom-2 {
+    margin-bottom: 50px;
+}
+
 .block4 .review p {
-    background-color: #ebebeb;
-    border-radius: 10px;
     font-family: Arial;
     color: #333333;
     font-size: 14px;
     font-style: italic;
     line-height: 18px;
     padding: 15px 20px 15px 27px;
-    height: 121px;
-    width: 450px;
-    margin-bottom: 30px;
+}
 
+.review {
+    display: flex;
+}
+
+.review-text {
+    width: 450px;
+    border-radius: 10px;
+    background-color: #ebebeb;
+    position: relative;
+    margin-left: 100px;
+}
+
+.review-text:before {
+    content: "";
+    border: 15px solid transparent;
+    border-right: 15px solid #ebebeb;
+    position: absolute;
+    top: 20px;
+    left: -30px;
 }
 
 .review span {
@@ -236,8 +307,6 @@ p {
     margin-top: 15px;
 }
 
-.block4 .review1 article {}
-
 .photo {
     background-image: url(../images/userpic.png);
     width: 75px;
@@ -245,14 +314,234 @@ p {
     float: left;
 }
 
-.block4 .review1 {}
 
-.block4 .review2 {}
+/*-------start block5--------*/
+.block5 h3 {
+    font-family: Arial;
+    color: #445161;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    margin-bottom: 30px;
+    padding-top: 50px;
+    text-align: center;
+}
 
-.block4 .review2 article {}
+.buy {
+    display: flex;
+    justify-content: center;
+}
 
-.block4 .review2 div {}
+.buy ol {
+    list-style-position: inside;
+    padding: 20px 0 20px 20px;
+}
 
-.block4 .review2 p {}
+.buy .standart,
+.premium,
+.lux {
+    align-self: flex-end;
+    background: #445161;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #000;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 24px;
+    margin: 0 22.5px 50px;
+    width: 300px;
+}
 
-/*stop block4*/
+.buy h4 {
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 30px;
+    padding: 17px 0;
+    text-align: center;
+}
+
+.buy strong {
+    background: #ffffff;
+    display: block;
+    font-family: Arial;
+    font-size: 40px;
+    font-weight: 400;
+    color: #445162;
+    line-height: 72px;
+    text-align: center;
+    height: 70px;
+    width: 300px;
+}
+
+.buy a {
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: block;
+    color: #445161;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 45px;
+    margin: 0 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    height: 40px;
+    width: 260px;
+}
+
+
+/*-------start footer-------*/
+
+footer {
+    background: #445161;
+}
+
+footer h3 {
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 36px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+footer .form {
+    display: flex;
+    justify-content: center;
+}
+
+footer .form placeholder {
+    padding: 13px 0 0 10px;
+}
+
+footer input {
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial;
+    color: #445162;
+    line-height: 24px;
+    margin: 10px 45px 10px 0;
+    padding-left: 10px;
+    height: 40px;
+    width: 500px;
+}
+
+footer input:hover {
+    background: #989898;
+
+}
+
+footer textarea {
+    border-radius: 5px;
+    color: #445162;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 13px 0 0 10px;
+    height: 170px;
+    width: 500px;
+}
+
+footer textarea:hover {
+    background: #989898;
+
+}
+
+input[type="submit"] {
+    color: #445162;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 180px;
+    text-transform: uppercase;
+    height: 40px;
+    width: 140px;
+}
+
+input[type="submit"]:hover {
+    background: #989898;
+}
+
+footer .adress {
+    margin-top: 10px;
+}
+
+.adress .social {
+    float: left;
+}
+
+.adress .social img {
+    padding: 0 5px 20px 0;
+}
+
+footer span {
+    display: block;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 5px 0 0 0;
+}
+
+footer .social-networks {
+    display: flex;
+    clear: both;
+}
+
+footer .social-networks a {
+    background-color: #fff;
+    color: #445162;
+    border-radius: 50%;
+    display: block;
+    font-family: Socialico;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-decoration: none;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+}
+
+.google img {
+    font-weight: 900;
+    height: 40px;
+    width: 40px;
+}
+
+.youtube img {
+    font-weight: 700;
+    height: 40px;
+    width: 40px;
+    color: #445162;
+}
+
+footer .social-networks a:hover {
+    background-color: #989898;
+}
+
+.copy {
+    background-color: #f5f5f5;
+    color: #445162;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 24px;
+    text-align: center;
+
+}
