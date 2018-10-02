@@ -172,7 +172,7 @@ summary:after {
 
 details[open] summary:after {
     content: "+";
-    line-height: 34px;
+    line-height: 30px;
     margin-left: 40px;
 }
 
@@ -517,20 +517,11 @@ footer .social-networks a {
     width: 40px;
 }
 
-.google img {
-    font-weight: 900;
-    height: 40px;
-    width: 40px;
+.icon-google {
+    font-weight: 600;
 }
 
-.youtube img {
-    font-weight: 700;
-    height: 40px;
-    width: 40px;
-    color: #445162;
-}
-
-footer .social-networks a:hover {
+.social-networks a:hover {
     background-color: #989898;
 }
 
