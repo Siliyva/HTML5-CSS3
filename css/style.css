@@ -172,7 +172,7 @@ summary:after {
 
 details[open] summary:after {
     content: "+";
-    line-height: 30px;
+    line-height: 34px;
     margin-left: 40px;
 }
 
@@ -476,8 +476,8 @@ footer .adress {
     margin-top: 10px;
 }
 
-.adress .social {
-    float: left;
+.adress_social {
+    display: flex;
 }
 
 .adress .social img {
@@ -490,8 +490,7 @@ footer span {
     color: #ffffff;
     font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
-    padding: 5px 0 0 0;
+    line-height: 30px;
 }
 
 footer .social-networks {
@@ -515,10 +514,6 @@ footer .social-networks a {
     text-align: center;
     height: 40px;
     width: 40px;
-}
-
-.icon-google {
-    font-weight: 600;
 }
 
 .social-networks a:hover {
